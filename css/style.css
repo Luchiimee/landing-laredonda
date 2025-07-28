@@ -1,0 +1,783 @@
+/* --- GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #eeeeee;
+    font-family: "Montserrat", sans-serif;
+}
+h1 {
+    font-size: clamp(32px, 6vw, 56px);
+    line-height: 1.2;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 3%;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 27px;
+    position: relative;
+}
+
+header img {
+    width: 200px;
+    padding: 0;
+  
+    
+}
+
+/* --- NAVEGACIÓN (Estilos por defecto para Desktop) --- */
+header nav.main-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1; 
+}
+
+
+header nav.main-nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Espacio entre los enlaces */
+    align-items: center;
+    padding: 0;
+    margin: 0 1px 0 180px;
+    
+}
+
+header nav.main-nav ul.nav-links li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    width: auto;
+
+}
+
+header nav.main-nav ul.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+
+header nav.main-nav ul.nav-links li a:after {
+    backface-visibility: hidden;
+    border-top: 1px solid #149861;
+    border-bottom: none;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+    margin-top: 5px;
+}
+header nav.main-nav ul.nav-links li a:hover:after {
+    backface-visibility: hidden;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+
+header nav ul.nav-buttons {
+    list-style: none;
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li.nav-button {
+    display: inline-block;
+    margin-left: 0; 
+}
+
+header nav ul li.nav-button a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    background: none;
+    color: #149861;
+    border: 2px solid #149861;
+    white-space: nowrap; 
+    text-decoration: none;
+}
+
+header nav ul li.nav-button a:after {
+    display: none !important;
+}
+
+header nav ul li.nav-button:first-child a:hover {
+    background: #149861;
+    color: white;
+}
+
+header nav ul li.nav-button:last-child a {
+    background: #149861;
+    color: white;
+    border: 2px solid #149861;
+    
+}
+
+header nav ul li.nav-button:last-child a:hover {
+    background: #09bc39;
+    color: white;
+}
+
+/* --- BANNER --- */
+.banner {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px auto;
+    max-width: 70%;
+}
+.banner img {
+    width: 500px;
+    transition: transform 0.3s ease;
+}
+.banner img:hover {
+    transform: scale(1.09);
+}
+.banner p {
+    width: 80%;
+    margin: 10px 0px;
+}
+
+/* --- BOTONES BANNER --- */
+
+.botones {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: #eeeeee;
+}
+.botones .registro {
+    border-radius: 8px;
+    padding: 8px;
+    font-family: "Montserrat", serif;
+    font-size: 23px;
+    text-transform: uppercase;
+    background: #149861;
+    border: none;
+    color: #eeeeee;
+    font-weight: bold;
+}
+.registro a,
+.demo a {
+    color: #eeeeee;
+    text-decoration: none; 
+}
+.demo {
+    border-radius: 8px;
+    padding: 0px 5px;
+    font-family: "Montserrat", serif;
+    font-size: 15px;
+    width: 140px;
+    height: 35px;
+    text-transform: uppercase;
+    background: #149861;
+    border: none;
+    color: #eeeeee; 
+    font-weight: bold; 
+}
+
+/* --- DESCRIPCIÓN PLATAFORMA --- */
+.descripcion-plataforma {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 70%;
+    margin: 80px auto;
+    border-radius: 20px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.07);
+}
+.descripcion-plataforma h2 {
+    font-size: 36px;
+    color: #1e2d40;
+    margin-bottom: 10px;
+}
+.descripcion-plataforma .subtitulo {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cards-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.card {
+    background-color: #f1e5db;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.card h3 {
+    color: #1e2d40;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.card p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* --- PLANES --- */
+.planes {
+    max-width: 1400px;
+    margin: 60px auto;
+    text-align: center;
+}
+.planes h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111;
+}
+.plan-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.plan {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transition: transform 0.3s ease;
+}
+.plan.destacado {
+    border: 2px solid #149861;
+    transform: scale(1.05);
+}
+.plan h3 {
+    font-size: 24px;
+    color: #149861;
+    margin-bottom: 10px;
+}
+.plan p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.plan ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.plan ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: #149861;
+    margin-top: 20px;
+}
+.bonificacion {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- SECCIÓN DE VIDEO DEMO --- */
+.video-demo-section {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 1400px;
+    margin: 60px auto;
+    border-radius: 20px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.video-demo-section h2 {
+    font-size: 38px;
+    color: #1e2d40;
+    margin-bottom: 20px;
+}
+
+.video-demo-section .subtitulo-video {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-contenedor {
+    position: relative;
+    width: 80%; 
+    max-width: 800px; 
+    margin: 0 auto 40px auto;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.video-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-demo-section .cta-video .registro {
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-family: "Montserrat", serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: #149861;
+    border: none;
+    color: #eeeeee;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.video-demo-section .cta-video .registro:hover {
+    background: #09bc39;
+}
+
+.video-demo-section .cta-video .registro a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+/* --- Estilos para el Menú Hamburguesa --- */
+
+.hamburger-menu {
+    display: none; 
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    z-index: 1000; 
+    position: relative; 
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333; 
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* TESTIMONIOS*/
+.testimonios {
+    padding: 60px 0px; /* Ajusta el padding vertical, horizontal se maneja con width y margin auto */
+    text-align: center;
+    overflow: hidden; /* Importante para el efecto de desvanecimiento */
+    position: relative; /* Para posicionar las pseudo-clases del fade */
+    width: 80%;
+    max-width: 1200px; /* Limita el ancho en pantallas muy grandes */
+    margin: 0 auto; /* Centra la sección de testimonios */
+    background-color: #eeeeee; /* Asegura que este color coincida con el fondo de los gradientes */
+}
+
+.testimonios h3 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contenedor-testimonios {
+    display: flex;
+   
+}
+
+.card-testimonios{
+    background-color: #dbdbdb;
+    gap: 10px;
+    margin: 10px ;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-testimonios p, .card-testimonios span, .card-testimonios img { /* Especificado para evitar conflictos */
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+}
+.card-testimonios img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.payment-mp-section {
+  background-color: #f8f8f8;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.payment-mp-section h2 {
+  font-size: 2.2rem;
+  color: #149861;
+  margin-bottom: 5rem;
+}
+
+.payment-mp-section p {
+  font-size: 1rem;
+  color: #343a3d;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 280px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4  {
+  color: #149861;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p{
+  font-size: 0.9rem;
+  color: #343a3d;
+}
+.feature-card .img-mp{
+    width: 100px;
+   padding: 0;
+   margin: 0;
+}
+.emoji-mp{
+ 
+    position: relative;
+    top: 5px;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1010px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+        width: 150px; 
+    }
+
+    .registrarse {
+        display: none;
+    }
+
+    header nav.main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 70%; 
+        max-width: 300px; 
+        height: 100%;
+        background-color: #fff; 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); 
+        transition: right 0.3s ease-out; 
+        flex-direction: column;
+        justify-content: flex-start; 
+        padding-top: 80px; 
+        z-index: 999; 
+        overflow-y: auto; 
+        margin-left: 0; 
+        position: fixed;
+    }
+
+    header nav.main-nav.active {
+        right: 0;
+    }
+
+    header nav.main-nav ul.nav-links,
+    header nav ul.nav-buttons {
+        flex-direction: column;
+        align-items: flex-start; 
+        width: 100%;
+        padding: 0 20px; 
+        gap: 0; 
+        margin: 0; 
+    }
+
+    header nav.main-nav ul.nav-links li,
+    header nav ul.nav-buttons li {
+        margin: 15px 0; 
+        width: 100%;
+        text-align: left; 
+    }
+
+    header nav.main-nav ul.nav-links li a,
+    header nav ul.nav-buttons li a {
+        font-size: 19px;
+        color: #1e2d40; 
+        font-weight: 500; 
+        display: block; 
+        padding: 8px 0; 
+        text-align: center;
+        position: relative; 
+        color: #333;
+    }
+
+    header nav.main-nav ul.nav-links li a:after,
+    header nav ul.nav-buttons li a::after {
+        content: ''; 
+        position: absolute; 
+        bottom: -5px; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 30%;
+        height: 2px;
+        background-color: #149861;
+        border-radius: 2px;
+    }
+
+    header nav ul li.nav-button {
+        display: block; 
+        width: 90%; 
+        margin: 15px auto; 
+        text-align: center; 
+    }
+
+    header nav ul li.nav-button a {
+        padding: 12px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: block; 
+    }
+
+    header nav ul li.nav-button:first-child a {
+        background: none;
+        color: #149861;
+        border: 2px solid #149861;
+    }
+
+    header nav ul li.nav-button:first-child a:hover {
+        background: #149861;
+        color: white;
+    }
+    header nav ul li.nav-button:last-child a {
+        background: #149861;
+        color: white;
+        border: none;
+    }
+
+    header nav ul li.nav-button:last-child a:hover {
+        background: #09bc39;
+        color: white;
+    }
+
+    /* Mostrar el ícono de hamburguesa */
+    .hamburger-menu {
+        display: flex;
+        order: 2; 
+        margin-left: auto; 
+        position: relative; 
+        z-index: 1001; 
+    }
+
+    /* Animación del ícono de hamburguesa (Transformación a 'X') */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .hamburger-menu.active{
+        position: fixed;
+        right: 20px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        max-width: 90%;
+        margin-top: 20px; 
+    }
+
+    .banner img {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .banner .parrafo {
+        width: 100%;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .banner p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botones button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .descripcion-plataforma {
+        max-width: 90%;
+        padding: 30px 15px;
+        margin: 40px auto;
+    }
+
+    .descripcion-plataforma h2 {
+        font-size: 28px;
+    }
+
+    .descripcion-plataforma .subtitulo {
+        font-size: 16px;
+    }
+
+    .cards-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustes para la sección de planes */
+    .planes {
+        max-width: 90%;
+    }
+
+    .planes h2 {
+        font-size: 28px;
+    }
+
+    .plan {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video-demo-section {
+        padding: 40px 15px;
+        margin: 30px auto;
+    }
+    .video-demo-section h2 {
+        font-size: 30px;
+    }
+    .video-demo-section .subtitulo-video {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .video-contenedor {
+        width: 95%;
+        padding-bottom: 56.25%;
+    }
+    .video-demo-section .cta-video .registro {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+    .testimonios h3{
+        font-size: 1.5em;
+    }
+    /* Reducir el tamaño de los fades en móvil */
+    .testimonios::before,
+    .testimonios::after {
+        width: 50px;
+    }
+
+    .testimonios {
+        padding: 40px 0; /* Ajusta el padding para móviles */
+        width: 95%; /* Ajusta el width para móviles si es necesario */
+    }
+}
