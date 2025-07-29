@@ -480,14 +480,15 @@ header nav ul li.nav-button:last-child a:hover {
 .payment-mp-section h2 {
   font-size: 2.2rem;
   color: #149861;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .payment-mp-section p {
   font-size: 1rem;
   color: #343a3d;
   max-width: 600px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 1.5rem;
+  max-width: 1200px;
 }
 
 .features {
@@ -535,6 +536,71 @@ header nav ul li.nav-button:last-child a:hover {
     top: 5px;
 }
 
+/* Preguntas frecuentes*/
+.faq-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000000;
+
+}
+
+.faq-container h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  border-top: 1px solid #334155;
+  padding: 1rem 0;
+  
+}
+.item1{
+    border-top:none ;
+}
+.faq-item input {
+  display: none;
+}
+
+.faq-item label {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.faq-item .faq-content {
+  max-height: 0;
+  overflow: hidden;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  padding-top: 0;
+  transition: all 0.3s ease;
+  
+}
+
+.faq-item input:checked ~ .faq-content {
+  max-height: 200px;
+  padding-top: 0.5rem;
+}
+
+.faq-item input:checked + label .icon {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+.faq-content p{
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+}
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1010px) {
     header {
