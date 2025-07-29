@@ -604,9 +604,10 @@ header nav ul li.nav-button:last-child a:hover {
 /* mockup */
 .mockup-slider-section {
   padding: 3rem 1rem;
-  
+  background: #f8f8f8;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
 }
 
 .mockup-slider-section h2 {
@@ -619,13 +620,14 @@ header nav ul li.nav-button:last-child a:hover {
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .slide-track {
   display: flex;
-  animation: scroll 20s linear infinite;
+  width: calc(200px * 12 + 2rem * 12); /* ancho de las 12 imágenes + sus gaps */
+  animation: scroll 30s linear infinite;
   gap: 2rem;
 }
 
@@ -633,13 +635,24 @@ header nav ul li.nav-button:last-child a:hover {
   width: 200px;
   flex-shrink: 0;
   border-radius: 1rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+ padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.rotate-left {
+  transform: rotate(-6deg);
+}
+
+.rotate-right {
+  transform: rotate(6deg);
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
+
+
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1010px) {
     header {
