@@ -36,10 +36,9 @@ header {
 }
 
 header img {
-    width: 200px;
+    width: 250px;
     padding: 0;
   
-    
 }
 
 /* --- NAVEGACIÓN (Estilos por defecto para Desktop) --- */
@@ -56,7 +55,7 @@ header nav.main-nav ul.nav-links {
     gap: 25px; /* Espacio entre los enlaces */
     align-items: center;
     padding: 0;
-    margin: 0 1px 0 180px;
+    margin: 0 auto;
     
 }
 
